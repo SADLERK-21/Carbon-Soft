@@ -1,0 +1,16 @@
+<div class="note-page">
+    <div class="note-page-title">
+        My Notes
+    </div>
+
+    <div class="note-page-notes-body">
+        <div class="note-page-notes-body-selector">
+            <note *ngFor="let note of notesList" [note]="note">
+            </note>
+        </div>
+
+        <div class="note-page-notes-body-text">
+            {{notesList[0].text}}
+        </div>
+    </div>
+</div>

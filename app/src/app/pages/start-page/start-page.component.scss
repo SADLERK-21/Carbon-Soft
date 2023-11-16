@@ -1,0 +1,30 @@
+.start-page {
+    height: 100%;
+    width: 100%;
+}
+
+.start-page-body {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.start-page-body-button {
+    border: 2px dashed #0d0d0d;
+    font-size: 45px;
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem;
+
+    transition: 0.3s 0s;
+
+    &:hover {
+        border: 2px solid #0d0d0d;
+        background-color: #0d0d0d;
+        color: white;
+        text-decoration: to-upper-case($string: "View Notes");
+    }
+}

@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    padding: 0;
+    margin: 0;
+    position: relative;
+
+    height: 100vh;
+    width: 100%;
+}
+
+.signature {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #0d0d0d;
+    font-size: 20px;
+    padding: 1rem;
+}

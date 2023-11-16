@@ -1,0 +1,17 @@
+<ng-container *ngIf="isSectionMode()">
+    <div class="note-section">
+        {{note.title}}
+    </div>
+</ng-container>
+
+<ng-template #tileMode>
+    <div class="note-tile">
+        <div class="note-tile-title">
+            {{note.title}}
+        </div>
+
+        <div class="note-tile-text">
+            {{note.text}}
+        </div>
+    </div>
+</ng-template>
