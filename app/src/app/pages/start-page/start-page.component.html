@@ -1,10 +1,13 @@
 <div class="start-page">
+    <div class="start-page-title">
+        My Notes App
+    </div>
     <div class="start-page-body">
-        <button class="start-page-body-button">
+        <button class="start-page-body-button" (click)="navigate('notes')">
             View Notes
         </button>
 
-        <button class="start-page-body-button">
+        <button class="start-page-body-button" (click)="navigate('notes-creation')">
             Add New Note
         </button>
     </div>

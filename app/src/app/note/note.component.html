@@ -1,5 +1,5 @@
 <ng-container *ngIf="isSectionMode()">
-    <div class="note-section">
+    <div class="note-section" [routerLink]="['/notes', path]" [style]="getStyleForSelectedNote()">
         {{note.title}}
     </div>
 </ng-container>

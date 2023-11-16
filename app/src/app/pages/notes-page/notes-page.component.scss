@@ -5,27 +5,48 @@
     width: 100%;
 }
 
-.note-page-title {
+.note-page-header {
     display: flex;
     height: 5rem;
+    border-bottom: 5px solid #0d0d0d;
+    flex-direction: row;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.note-page-header-title {
     color: #0d0d0d;
     font-size: 42px;
-    border-bottom: 5px solid #0d0d0d;
+}
+
+.note-page-header-back-button-box {
+    display: flex;
+    height: 100%;
+    width: 5rem;
     flex-direction: column;
     justify-content: center;
-    padding: 0 1rem;
+    align-items: center;
+    margin-left: auto;
+}
+
+.note-page-header-back-button {
+    height: 2rem;
+    width: 2rem;
 }
 
 .note-page-notes-body {
-    flex: 1 1 auto;
+    flex: 1 1;
     display: flex;
+    max-height: 94vh;
 }
 
 .note-page-notes-body-selector {
-    width: 30rem;
+    width: 33rem;
     border-right: 5px solid #0d0d0d;
     display: flex;
     flex-direction: column;
+    max-height: 100%;
+    overflow-y: scroll;
 }
 
 .note-page-notes-body-text {

@@ -1,0 +1,104 @@
+.note-creation-page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.note-creation-page-title {
+    display: flex;
+    height: 5rem;
+    color: #0d0d0d;
+    font-size: 42px;
+    border-bottom: 5px solid #0d0d0d;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.note-creation-page-input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.note-creation-page-input-title {
+    font-size: 35px;
+    margin-bottom: 1rem;
+}
+
+.note-creation-page-input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.note-creation-page-input {
+    display: flex;
+    font-size: 25px;
+    padding: 1rem;
+    width: 37.5rem;
+    border: 2px dashed #0d0d0d;
+
+    transition: 0.3s 0s;
+
+    &:focus {
+        border: 2px solid #0d0d0d;
+        background-color: #0d0d0d;
+        color: white;
+    }
+}
+
+.note-creation-page-editor-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.note-creation-page-editor-title {
+    font-size: 35px;
+    margin-bottom: 1rem;
+}
+
+.note-creation-page-button-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.note-creation-page-button-submit {
+    background-color: white;
+    font-size: 20px;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    border: 2px dashed #0d0d0d;
+
+    transition: 0.3s 0s;
+
+    &:hover {
+        border: 2px solid #0d0d0d;
+        background-color: #0d0d0d;
+        color: white;
+    }
+}
+
+.note-creation-page-button-reject {
+    background-color: white;
+    font-size: 20px;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    border: 2px dashed #740202;
+    color: #740202;
+
+    transition: 0.3s 0s;
+
+    &:hover {
+        border: 2px solid #740202;
+        background-color: #740202;
+        color: white;
+    }
+}

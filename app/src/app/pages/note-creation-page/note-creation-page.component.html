@@ -1,0 +1,29 @@
+<div class="note-creation-page">
+    <div class="note-creation-page-title">
+        New Tile
+    </div>
+    <div class="note-creation-page-input-section">
+        <div class="note-creation-page-input-title">
+            Note Title
+        </div>
+        <div class="note-creation-page-input-box">
+            <input type="text" placeholder="For note, you need to specify the title..." class="note-creation-page-input"
+                [(ngModel)]="noteTitle">
+        </div>
+    </div>
+    <div class="note-creation-page-editor-section">
+        <div class="note-creation-page-editor-title">
+            Note Text
+        </div>
+        <angular-editor class="note-creation-page-editor" [config]="editorConfig"
+            [(ngModel)]="noteText"></angular-editor>
+    </div>
+    <div class="note-creation-page-button-section">
+        <button class="note-creation-page-button-submit" (click)="submitNote()">
+            Submit
+        </button>
+        <button class="note-creation-page-button-reject">
+            Close
+        </button>
+    </div>
+</div>

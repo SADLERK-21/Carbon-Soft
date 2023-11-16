@@ -1,16 +1,21 @@
 <div class="note-page">
-    <div class="note-page-title">
-        My Notes
+    <div class="note-page-header">
+        <div class="note-page-header-title">
+            My Notes
+        </div>
+        <div class="note-page-header-back-button-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/3585/3585896.png" alt=""
+                class="note-page-header-back-button" [routerLink]="['']">
+        </div>
     </div>
 
     <div class="note-page-notes-body">
         <div class="note-page-notes-body-selector">
-            <note *ngFor="let note of notesList" [note]="note">
+            <note *ngFor="let note of notesList" [note]="note" [isNoteSelected]="isNoteSelected(note)">
             </note>
         </div>
 
-        <div class="note-page-notes-body-text">
-            {{notesList[0].text}}
+        <div class="note-page-notes-body-text" [innerHTML]="noteTextHtml">
         </div>
     </div>
 </div>

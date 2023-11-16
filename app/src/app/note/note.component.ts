@@ -10,6 +10,8 @@ export class NoteComponent implements OnInit {
 
   @Input() note: Note;
   @Input() viewMode: ViewMode = ViewMode.Section;
+  @Input() isNoteSelected: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -19,6 +21,13 @@ export class NoteComponent implements OnInit {
     return this.viewMode === ViewMode.Section;
   }
 
+  public getStyleForSelectedNote(): string {
+    return this.isNoteSelected ? 'background-color: #0d0d0d; color: white; border: 2px solid #0d0d0d;' : '';
+  }
+
+  public get path(): string {
+    return this.note.title.trim() + this.note.id
+  }
 }
 
 export enum ViewMode {
