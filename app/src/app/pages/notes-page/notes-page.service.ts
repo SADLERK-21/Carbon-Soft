@@ -12,7 +12,7 @@ export class NotesService {
         if (note) {
             note.id = this.generateNoteId();
             this.notes.unshift(note);
-            router.navigate(['notes', { id: note.title.trim() + note.id }]);
+            router.navigate(['notes']);
         }
     }
 

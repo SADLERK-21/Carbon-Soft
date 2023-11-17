@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Note } from './note';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'note',
@@ -9,16 +10,14 @@ import { Note } from './note';
 export class NoteComponent implements OnInit {
 
   @Input() note: Note;
-  @Input() viewMode: ViewMode = ViewMode.Section;
   @Input() isNoteSelected: boolean = false;
+  @Output() noteDateOnClick = new EventEmitter<Note>()
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-  }
-
-  public isSectionMode(): boolean {
-    return this.viewMode === ViewMode.Section;
   }
 
   public getStyleForSelectedNote(): string {
@@ -28,9 +27,9 @@ export class NoteComponent implements OnInit {
   public get path(): string {
     return this.note.title.trim() + this.note.id
   }
-}
 
-export enum ViewMode {
-  Section,
-  Tile
+  public onNoteClick() {
+    this.noteDateOnClick.emit(this.note);
+    this.router.navigate(['notes', { id: this.path }])
+  }
 }

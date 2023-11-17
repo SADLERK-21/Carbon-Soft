@@ -12,6 +12,7 @@ export class NoteCreationPageComponent implements OnInit {
 
   public noteText: string;
   public noteTitle: string;
+  public editorConfig = editorConfig;
 
   constructor(
     private notesService: NotesService,
@@ -21,40 +22,12 @@ export class NoteCreationPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public editorConfig: AngularEditorConfig = {
-    editable: true,
-    spellcheck: true,
-    translate: 'yes',
-    enableToolbar: true,
-    showToolbar: true,
-    placeholder: 'Enter text here...',
-    toolbarHiddenButtons: [
-      [
-        'subscript',
-        'superscript',
-        'fontName'
-      ],
-      [
-        'fontSize',
-        'textColor',
-        'backgroundColor',
-        'customClasses',
-        'link',
-        'unlink',
-        'insertImage',
-        'insertVideo',
-        'insertHorizontalRule',
-        'toggleEditorMode'
-      ]
-    ]
-  };
-
   public submitNote() {
     if (this.noteTitle.length > 0) {
       if (this.noteText.length > 0) {
         this.notesService.addNote({
           text: this.noteText,
-          title: this.noteTitle
+          title: this.noteTitle.trim()
         }, this.router);
       } else {
         alert("You need to set the Note Text");
@@ -63,4 +36,39 @@ export class NoteCreationPageComponent implements OnInit {
       alert("You need to set the Note title");
     }
   }
+
+  public close() {
+    this.noteText = "";
+    this.noteTitle = "";
+
+    this.router.navigate(['']);
+  }
+}
+
+const editorConfig: AngularEditorConfig = {
+  editable: true,
+  spellcheck: true,
+  translate: 'yes',
+  enableToolbar: true,
+  showToolbar: true,
+  placeholder: 'Enter text here...',
+  toolbarHiddenButtons: [
+    [
+      'subscript',
+      'superscript',
+      'fontName'
+    ],
+    [
+      'fontSize',
+      'textColor',
+      'backgroundColor',
+      'customClasses',
+      'link',
+      'unlink',
+      'insertImage',
+      'insertVideo',
+      'insertHorizontalRule',
+      'toggleEditorMode'
+    ]
+  ]
 }

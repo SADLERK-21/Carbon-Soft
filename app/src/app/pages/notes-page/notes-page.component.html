@@ -11,11 +11,12 @@
 
     <div class="note-page-notes-body">
         <div class="note-page-notes-body-selector">
-            <note *ngFor="let note of notesList" [note]="note" [isNoteSelected]="isNoteSelected(note)">
+            <note *ngFor="let note of notesList" [note]="note" [isNoteSelected]="isNoteSelected(note)"
+                (noteDateOnClick)="selectNote($event)">
             </note>
         </div>
 
-        <div class="note-page-notes-body-text" [innerHTML]="noteTextHtml">
+        <div class="note-page-notes-body-text" [innerHTML]="noteText">
         </div>
     </div>
 </div>

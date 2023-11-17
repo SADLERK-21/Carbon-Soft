@@ -1,17 +1,6 @@
-<ng-container *ngIf="isSectionMode()">
-    <div class="note-section" [routerLink]="['/notes', path]" [style]="getStyleForSelectedNote()">
-        {{note.title}}
-    </div>
-</ng-container>
-
-<ng-template #tileMode>
-    <div class="note-tile">
-        <div class="note-tile-title">
-            {{note.title}}
-        </div>
-
-        <div class="note-tile-text">
-            {{note.text}}
-        </div>
-    </div>
-</ng-template>
+<div class="note-section" [style]="getStyleForSelectedNote()" (click)="onNoteClick()">
+    {{note.title}}
+    <button class="note-section-button">
+        Delete
+    </button>
+</div>
