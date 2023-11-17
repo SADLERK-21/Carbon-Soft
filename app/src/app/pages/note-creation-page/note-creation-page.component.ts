@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./note-creation-page.component.scss']
 })
 export class NoteCreationPageComponent implements OnInit {
-
   public noteText: string;
   public noteTitle: string;
   public editorConfig = editorConfig;
@@ -25,16 +24,24 @@ export class NoteCreationPageComponent implements OnInit {
   public submitNote() {
     if (this.noteTitle.length > 0) {
       if (this.noteText.length > 0) {
-        this.notesService.addNote({
-          text: this.noteText,
-          title: this.noteTitle.trim()
-        }, this.router);
-      } else {
-        alert("You need to set the Note Text");
+        this.notesService.addNote(
+          this.noteTitle.trim(),
+          this.noteText,
+          this.router
+        );
       }
-    } else {
-      alert("You need to set the Note title");
     }
+  }
+
+  public isSubmitButtonDisabled(): boolean {
+    return this.noteTitle == null ||
+      this.noteText == null ||
+      this.noteTitle.length <= 0 ||
+      this.noteText.length <= 0
+  }
+
+  public disabledButonStyle(): string {
+    return this.isSubmitButtonDisabled() ? 'background-color: #3b3b3b; color: black; border: 2px solid #3b3b3b;' : '';
   }
 
   public close() {

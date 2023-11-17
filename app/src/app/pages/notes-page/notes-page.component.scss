@@ -31,7 +31,12 @@
 
 .note-page-header-back-button {
     height: 2rem;
-    width: 2rem;
+
+    transition: 0.3s 0s;
+
+    &:hover {
+        height: 2.5rem;
+    }
 }
 
 .note-page-notes-body {
@@ -46,12 +51,33 @@
     display: flex;
     flex-direction: column;
     max-height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .note-page-notes-body-text {
     flex: 1 1 auto;
     display: flex;
-    padding: 1rem;
+    padding: 1rem 1rem 3rem 1rem;
     font-size: 20px;
+    width: 70%;
+    word-break: break-all;
+    overflow-y: auto;
+}
+
+.note-page-notes-body-plus-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.note-page-notes-body-plus {
+    height: 3rem;
+
+    transition: 0.3s 0s;
+
+    &:hover {
+        height: 3.5rem;
+    }
 }

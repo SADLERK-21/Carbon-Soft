@@ -11,9 +11,17 @@
 
     <div class="note-page-notes-body">
         <div class="note-page-notes-body-selector">
-            <note *ngFor="let note of notesList" [note]="note" [isNoteSelected]="isNoteSelected(note)"
-                (noteDateOnClick)="selectNote($event)">
+            <note *ngFor="let note of noteService.notes" 
+                [note]="note" 
+                [isNoteSelected]="isNoteSelected(note)"
+                (noteDateOnClick)="selectNote($event)" 
+                (noteDeleteOnClick)="deleteNote($event)">
             </note>
+
+            <div class="note-page-notes-body-plus-box" [routerLink]="'/notes-creation'">
+                <img src="https://cdn-icons-png.flaticon.com/512/3303/3303893.png" alt=""
+                    class="note-page-notes-body-plus">
+            </div>
         </div>
 
         <div class="note-page-notes-body-text" [innerHTML]="noteText">

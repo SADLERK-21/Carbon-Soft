@@ -1,6 +1,10 @@
 <div class="note-creation-page">
     <div class="note-creation-page-title">
         New Note
+        <div class="note-creation-page-back-button-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/3585/3585896.png" alt=""
+                class="note-creation-page-back-button" [routerLink]="['']">
+        </div>
     </div>
     <div class="note-creation-page-input-section">
         <div class="note-creation-page-input-title">
@@ -19,7 +23,10 @@
             [(ngModel)]="noteText"></angular-editor>
     </div>
     <div class="note-creation-page-button-section">
-        <button class="note-creation-page-button-submit" (click)="submitNote()">
+        <button class="note-creation-page-button-submit" 
+            (click)="submitNote()" 
+            [disabled]="isSubmitButtonDisabled()"
+            [style]="disabledButonStyle()">
             Submit
         </button>
         <button class="note-creation-page-button-reject" (click)="close()">

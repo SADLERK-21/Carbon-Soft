@@ -4,29 +4,34 @@ import { Note } from "src/app/note/note";
 
 Injectable()
 export class NotesService {
-    private noteIdForGenerate = 1;
 
-    private notes: Note[] = [];
+    private noteIdForGeneration = 1;
+    public notes: Note[] = [];
 
-    public addNote(note: Note, router: Router) {
-        if (note) {
-            note.id = this.generateNoteId();
-            this.notes.unshift(note);
+    public addNote(noteTitle: string, noteText: string, router: Router) {
+        if (noteTitle && noteText && router) {
+            this.notes.unshift(
+                {
+                    title: noteTitle,
+                    text: noteText,
+                    id: this.generateNoteId()
+                }
+            );
             router.navigate(['notes']);
         }
     }
 
-    public getNotes(): Note[] {
-        return this.notes;
+    public deletNote(id: number) {
+        this.notes = this.notes.filter(note => note.id !== id);
     }
 
     private generateNoteId() {
-        if (this.notes.some(note => note.id === this.noteIdForGenerate)) {
-            this.noteIdForGenerate++
-            this.generateNoteId()
+        if (this.notes.some(note => note.id === this.noteIdForGeneration)) {
+            this.noteIdForGeneration++
+            return this.generateNoteId()
         } else {
-            let result = this.noteIdForGenerate;
-            this.noteIdForGenerate = 1;
+            let result = this.noteIdForGeneration;
+            this.noteIdForGeneration = 1;
             return result;
         }
 

@@ -11,7 +11,8 @@ export class NoteComponent implements OnInit {
 
   @Input() note: Note;
   @Input() isNoteSelected: boolean = false;
-  @Output() noteDateOnClick = new EventEmitter<Note>()
+  @Output() noteDateOnClick = new EventEmitter<Note>();
+  @Output() noteDeleteOnClick = new EventEmitter<Note>();
 
   constructor(
     private router: Router
@@ -31,5 +32,9 @@ export class NoteComponent implements OnInit {
   public onNoteClick() {
     this.noteDateOnClick.emit(this.note);
     this.router.navigate(['notes', { id: this.path }])
+  }
+
+  public onNoteDeleteClick() {
+    this.noteDeleteOnClick.emit(this.note);
   }
 }

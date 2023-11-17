@@ -11,9 +11,30 @@
     color: #0d0d0d;
     font-size: 42px;
     border-bottom: 5px solid #0d0d0d;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     padding: 0 1rem;
+    align-items: center;
+}
+
+.note-creation-page-back-button-box {
+    display: flex;
+    height: 100%;
+    width: 5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+
+.note-creation-page-back-button {
+    height: 2rem;
+
+    transition: 0.3s 0s;
+
+    &:hover {
+        height: 2.5rem;
+    }
 }
 
 .note-creation-page-input-section {
@@ -61,6 +82,10 @@
 .note-creation-page-editor-title {
     font-size: 35px;
     margin-bottom: 1rem;
+}
+
+.note-creation-page-editor {
+    max-width: 100%;
 }
 
 .note-creation-page-button-section {
